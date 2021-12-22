@@ -22,8 +22,7 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: Zip up package and place in aws/s3/
-        run:
-          - zip -r aws/s3/package/package.zip package/
+        run: zip -r aws/s3/package/package.zip package/
 
       - name: Sync aws/s3/ to s3://grejdi-plan/
         run: aws s3 sync aws/s3/ s3://grejdi-plan/
