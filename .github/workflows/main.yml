@@ -19,9 +19,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
-      # Runs a single command using the runners shell
-      - name: Verify AWS CLI
-        run: aws --version
+      - name: Zip up package and place in aws/s3/
+        run:
+          - zip -r aws/s3/package/package.zip package/
+
+      - name: Sync aws/s3/ to s3://grejdi-plan/
+        run: aws s3 sync aws/s3/ s3://grejdi-plan/
