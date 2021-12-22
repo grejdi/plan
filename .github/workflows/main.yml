@@ -19,7 +19,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout repository code
+        uses: actions/checkout@v2
+
+      - name: List files in the repository
+        run: ls -la ${{github.workspace}}
 
       - name: Zip up package and place in aws/s3/
         run: zip -r ${{github.workspace}}/aws/s3/package/package.zip ${{github.workspace}}/package/
