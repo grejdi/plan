@@ -34,7 +34,7 @@ jobs:
         run: aws s3 sync ${{github.workspace}}/aws/s3/ s3://grejdi-plan/ --exclude "*/empty"
 
       - name: Run task
-        uses: grejdi/actions/amazon_ecs__run_task@v1
+        uses: grejdi/actions/amazon_ecs__run_task
         with:
           aws_access_key_id: ${{secrets.AWS_ACCESS_KEY_ID}}
           aws_secret_access_key: ${{secrets.AWS_ACCESS_KEY_ID}}
