@@ -37,7 +37,7 @@ jobs:
         uses: grejdi/actions/amazon_ecs__run_task@v1
         with:
           aws_access_key_id: ${{secrets.AWS_ACCESS_KEY_ID}}
-          aws_secret_access_key: ${{secrets.AWS_ACCESS_KEY_ID}}
+          aws_secret_access_key: ${{secrets.AWS_SECRET_ACCESS_KEY}}
           aws_default_region: us-east-1
           ecs_cluster: arn:aws:ecs:us-east-1:170458677850:cluster/plan
           ecs_task_definition: arn:aws:ecs:us-east-1:170458677850:task-definition/plan
